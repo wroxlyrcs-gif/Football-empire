@@ -50,3 +50,258 @@ if(['sell','renew'].includes(a))G.fn.tr+=G.bud-b0};
 const _sc=startCareer;startCareer=function(){_sc();initG();migrate();save();render()};
 applyAn();setTimeout(()=>{const s=$('#splash');if(s){s.style.opacity=0;setTimeout(()=>s.remove(),500)}},1600);render();
                                                   
+/* ===== FOOTBALL EMPIRE 2.0 — MULTI LANGUAGE SYSTEM ===== */
+
+const FE_LANGS = {
+  tr: {
+    "Ana Menü": "Ana Menü",
+    "Yeni Kariyer": "Yeni Kariyer",
+    "Kariyere Devam Et": "Kariyere Devam Et",
+    "Kulübüm": "Kulübüm",
+    "Kadro": "Kadro",
+    "Transfer Merkezi": "Transfer Merkezi",
+    "Taktikler": "Taktikler",
+    "Antrenman": "Antrenman",
+    "Ligler ve Kupalar": "Ligler ve Kupalar",
+    "Stadyum": "Stadyum",
+    "Finans": "Finans",
+    "İstatistikler": "İstatistikler",
+    "Ayarlar": "Ayarlar",
+    "Ana": "Ana",
+    "Transfer": "Transfer",
+    "Taktik": "Taktik",
+    "Menü": "Menü",
+    "Kaydet": "Kaydet",
+    "İptal": "İptal",
+    "Devam": "Devam",
+    "Bütçe": "Bütçe",
+    "Oyuncular": "Oyuncular",
+    "Lig": "Lig",
+    "Maç": "Maç",
+    "Gol": "Gol",
+    "Galibiyet": "Galibiyet",
+    "Beraberlik": "Beraberlik",
+    "Mağlubiyet": "Mağlubiyet",
+    "Dil": "Dil"
+  },
+
+  en: {
+    "Ana Menü": "Main Menu",
+    "Yeni Kariyer": "New Career",
+    "Kariyere Devam Et": "Continue Career",
+    "Kulübüm": "My Club",
+    "Kadro": "Squad",
+    "Transfer Merkezi": "Transfer Market",
+    "Taktikler": "Tactics",
+    "Antrenman": "Training",
+    "Ligler ve Kupalar": "Leagues & Cups",
+    "Stadyum": "Stadium",
+    "Finans": "Finances",
+    "İstatistikler": "Statistics",
+    "Ayarlar": "Settings",
+    "Ana": "Home",
+    "Transfer": "Transfers",
+    "Taktik": "Tactics",
+    "Menü": "Menu",
+    "Kaydet": "Save",
+    "İptal": "Cancel",
+    "Devam": "Continue",
+    "Bütçe": "Budget",
+    "Oyuncular": "Players",
+    "Lig": "League",
+    "Maç": "Match",
+    "Gol": "Goal",
+    "Galibiyet": "Wins",
+    "Beraberlik": "Draws",
+    "Mağlubiyet": "Losses",
+    "Dil": "Language",
+    "Ses": "Sound",
+    "Açık": "On",
+    "Kapalı": "Off",
+    "Kondisyon": "Fitness",
+    "Hücum": "Attack",
+    "Savunma": "Defense",
+    "Pas": "Passing",
+    "Şut": "Shooting",
+    "Genç Gelişim": "Youth Development",
+    "Yönetim Hedefleri": "Board Objectives",
+    "Sezon Ödülleri": "Season Awards",
+    "Haberler": "News",
+    "Gelişim Raporu": "Development Report",
+    "Genç Yetenekler": "Young Talents",
+    "Kapasite": "Capacity",
+    "Taraftar": "Fans",
+    "Memnuniyet": "Satisfaction",
+    "Tahmini seyirci": "Expected Attendance",
+    "Bilet fiyatı": "Ticket Price",
+    "Geliştirmeler": "Upgrades",
+    "Antrenman tesisi": "Training Facility",
+    "Gençlik akademisi": "Youth Academy",
+    "Haftalık maaş": "Weekly Wages",
+    "Son Hafta": "Last Week",
+    "Sezon Raporu": "Season Report",
+    "Gol Krallığı": "Top Scorers",
+    "Asist Krallığı": "Top Assists",
+    "Kadro dolu": "Squad is full",
+    "Bütçe yetersiz": "Insufficient budget",
+    "Oyun kaydedildi": "Game saved"
+  },
+
+  ru: {
+    "Ana Menü": "Главное меню",
+    "Yeni Kariyer": "Новая карьера",
+    "Kariyere Devam Et": "Продолжить карьеру",
+    "Kulübüm": "Мой клуб",
+    "Kadro": "Состав",
+    "Transfer Merkezi": "Трансферный рынок",
+    "Taktikler": "Тактика",
+    "Antrenman": "Тренировки",
+    "Ligler ve Kupalar": "Лиги и кубки",
+    "Stadyum": "Стадион",
+    "Finans": "Финансы",
+    "İstatistikler": "Статистика",
+    "Ayarlar": "Настройки",
+    "Ana": "Главная",
+    "Transfer": "Трансферы",
+    "Taktik": "Тактика",
+    "Menü": "Меню",
+    "Kaydet": "Сохранить",
+    "İptal": "Отмена",
+    "Devam": "Продолжить",
+    "Bütçe": "Бюджет",
+    "Oyuncular": "Игроки",
+    "Lig": "Лига",
+    "Maç": "Матч",
+    "Gol": "Гол",
+    "Galibiyet": "Победы",
+    "Beraberlik": "Ничьи",
+    "Mağlubiyet": "Поражения",
+    "Dil": "Язык",
+    "Ses": "Звук",
+    "Açık": "Вкл.",
+    "Kapalı": "Выкл.",
+    "Kondisyon": "Физическая форма",
+    "Hücum": "Атака",
+    "Savunma": "Защита",
+    "Pas": "Пас",
+    "Şut": "Удар",
+    "Genç Gelişim": "Развитие молодёжи",
+    "Yönetim Hedefleri": "Цели руководства",
+    "Sezon Ödülleri": "Награды сезона",
+    "Haberler": "Новости",
+    "Gelişim Raporu": "Отчёт о развитии",
+    "Genç Yetenekler": "Молодые таланты",
+    "Kapasite": "Вместимость",
+    "Taraftar": "Болельщики",
+    "Memnuniyet": "Удовлетворённость",
+    "Tahmini seyirci": "Ожидаемая посещаемость",
+    "Bilet fiyatı": "Цена билета",
+    "Geliştirmeler": "Улучшения",
+    "Antrenman tesisi": "Тренировочная база",
+    "Gençlik akademisi": "Молодёжная академия",
+    "Haftalık maaş": "Недельная зарплата",
+    "Son Hafta": "Последняя неделя",
+    "Sezon Raporu": "Отчёт сезона",
+    "Gol Krallığı": "Лучшие бомбардиры",
+    "Asist Krallığı": "Лучшие ассистенты",
+    "Kadro dolu": "Состав заполнен",
+    "Bütçe yetersiz": "Недостаточно средств",
+    "Oyun kaydedildi": "Игра сохранена"
+  }
+};
+
+let FE_LANG = localStorage.getItem('fe_lang') || 'tr';
+
+function FE_translateText(text) {
+  const dict = FE_LANGS[FE_LANG] || FE_LANGS.tr;
+  let result = text;
+
+  const keys = Object.keys(dict).sort((a, b) => b.length - a.length);
+
+  keys.forEach(key => {
+    if (key !== dict[key]) {
+      result = result.split(key).join(dict[key]);
+    }
+  });
+
+  return result;
+}
+
+function FE_applyLanguage() {
+  document.documentElement.lang = FE_LANG;
+
+  const walker = document.createTreeWalker(
+    document.body,
+    NodeFilter.SHOW_TEXT
+  );
+
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  nodes.forEach(node => {
+    if (node.nodeValue.trim()) {
+      node.nodeValue = FE_translateText(node.nodeValue);
+    }
+  });
+
+  document.querySelectorAll(
+    'input[placeholder], button[title], input[type=button], input[type=submit]'
+  ).forEach(el => {
+    if (el.placeholder) el.placeholder = FE_translateText(el.placeholder);
+    if (el.title) el.title = FE_translateText(el.title);
+    if (el.value) el.value = FE_translateText(el.value);
+  });
+}
+
+function FE_languagePanel() {
+  const names = {
+    tr: '🇹🇷 Türkçe',
+    en: '🇬🇧 English',
+    ru: '🇷🇺 Русский'
+  };
+
+  return `
+    <div class="card">
+      <h3>🌍 Language / Dil / Язык</h3>
+      <select
+        id="fe-language"
+        class="btn"
+        style="width:100%;padding:12px"
+        onchange="FE_changeLanguage(this.value)"
+      >
+        ${Object.entries(names).map(([code, name]) =>
+          `<option value="${code}" ${FE_LANG === code ? 'selected' : ''}>
+            ${name}
+          </option>`
+        ).join('')}
+      </select>
+    </div>
+  `;
+}
+
+function FE_changeLanguage(lang) {
+  if (!FE_LANGS[lang]) return;
+
+  FE_LANG = lang;
+  localStorage.setItem('fe_lang', lang);
+  location.reload();
+}
+
+/* Ayarlar ekranına dil seçimi ekle */
+const FE_oldSettings = V.set;
+
+V.set = function() {
+  return FE_oldSettings() + FE_languagePanel();
+};
+
+/* Ekran yeniləndikdə tərcüməni tətbiq et */
+const FE_oldRender = render;
+
+render = function() {
+  FE_oldRender();
+  FE_applyLanguage();
+};
+
+/* İlk açılış */
+applyAn();
+FE_applyLanguage();
