@@ -5,10 +5,10 @@ let G = null;
 let S = {
   v: 'menu',
   nf: {
-    name: 'Zunex FC',
-    logo: '⚽',
-    c1: '#d4af37',
-    c2: '#1f7a3e',
+    name: '',
+    logo: '',
+    c1: '#',
+    c2: '#',
     co: 'TR',
     bud: 5e7
   },
