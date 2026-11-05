@@ -1,0 +1,11 @@
+/* ===== 2.0: TAKTİK ===== */
+D.FM['5-3-2']=[['GK',.05,[.5]],['DF',.22,[.1,.3,.5,.7,.9]],['MD',.46,[.25,.5,.75]],['FW',.72,[.38,.62]]];
+D.FM['3-4-3']=[['GK',.05,[.5]],['DF',.22,[.25,.5,.75]],['MD',.46,[.15,.38,.62,.85]],['FW',.72,[.2,.5,.8]]];
+const STY={P:'Topa Sahip Olma',C:'Kontra Atak',H:'Önde Baskı',D:'Savunma Ağırlıklı',B:'Dengeli'};
+const _rate=rate;
+rate=function(t){const o=t.tac,keep=o=='A'||o=='D';if(!keep)t.tac='B';const r=_rate(t);t.tac=o;const k={P:[1.01,1,1.07],C:[1.05,1.02,.95],H:[1.05,.96,1.03]}[o]||[1,1,1],c=t.cap&&t.lu.includes(t.cap)?1.01:1;return{at:r.at*k[0]*c,df:r.df*k[1]*c,md:r.md*k[2]*c}};
+function pitchHTML(u){const sl=slots(u.form),rs=(k,n)=>`<div><label class=m>${n}</label><select data-r=${k}><option value=0>Otomatik</option>${u.lu.map(id=>pl(u,id)).map(p=>`<option value=${p.id} ${u[k]==p.id?'selected':''}>${p.name}</option>`).join('')}</select></div>`;
+return `<div class=card><h3>Saha Düzeni</h3><small class=m>Oyuncuyu sürükleyip başka oyuncunun veya yedeğin üstüne bırak.</small><div class=pt>${u.lu.map((id,i)=>{const p=pl(u,id),s=sl[i];return `<div class=chip data-k=l data-i=${i} style="left:${s.y*100}%;top:${(1-s.x)*100}%;background:${u.c1};border-color:${u.c2}">${p.no}<small>${p.name.split('. ')[1]||p.name}</small></div>`}).join('')}</div><div class=g2 style="margin-top:8px">${rs('cap','Kaptan')}${rs('pen','Penaltı')}${rs('fk','Serbest Vuruş')}${rs('cr','Korner')}</div></div>`}
+document.addEventListener('pointerdown',e=>{const c=e.target.closest('.chip');if(!c)return;e.preventDefault();c.setPointerCapture(e.pointerId);const ox=c.offsetLeft,oy=c.offsetTop,sx=e.clientX,sy=e.clientY;c.style.zIndex=5;
+const mv=v=>{c.style.left=ox+v.clientX-sx+'px';c.style.top=oy+v.clientY-sy+'px'},up=v=>{c.removeEventListener('pointermove',mv);c.removeEventListener('pointerup',up);c.style.pointerEvents='none';const t=document.elementFromPoint(v.clientX,v.clientY),d=t&&t.closest('[data-k]');c.style.pointerEvents='';if(d&&d!=c){S.sw={k:'l',i:+c.dataset.i};act('sw',d.dataset)}else render()};c.addEventListener('pointermove',mv);c.addEventListener('pointerup',up)});
+document.addEventListener('change',e=>{const r=e.target.dataset.r;if(r&&G){G.teams[0][r]=+e.target.value;save();toast('Kaydedildi')}});
