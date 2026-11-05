@@ -1,0 +1,5 @@
+/* ===== TRANSFER ===== */
+function refreshMarket(){G.mk=Array.from({length:40},()=>{const p=PL.mk(P(['GK','DF','DF','MD','MD','FW','FW']),R(52,78));p.from=P(D.C[G.country].c)+' '+P(D.SUF);return p})}
+/* ===== 2.0: PAZARLIK, KİRALIK, TEKLİFLER ===== */
+function negotiate(id,fee,wg){const u=G.teams[0],i=G.mk.findIndex(p=>p.id==id),p=G.mk[i];if(!p)return'Oyuncu bulunamadı';const price=Math.round(p.val*fee);if(u.sq.length>=30)return'Kadro dolu (en fazla 30)';if(G.bud<price)return'Bütçe yetersiz';if(Math.random()>(fee<1?.5:1)*(wg<1?.55:1))return'Teklif reddedildi: '+p.name;G.bud-=price;p.sal=Math.round(p.sal*wg/1e4)*1e4;p.yrs=3;p.mor=wg>1?90:80;delete p.from;u.sq.push(p);G.mk.splice(i,1);nw('🔁 Transfer: '+p.name+' ('+M$(price)+')');return'Transfer tamam: '+p.name}
+function loan(id){const u=G.teams[0],i=G.mk.findIndex(p=>p.id==id),p=G.mk[i],c=Math.round(p.val*.15);if(u.sq.length>=30)return'Kadro dolu';if(G.bud<c)return'Bütçe yetersiz';G.bud-=c;p.loan=1;p.yrs=1;delete p.from;u.sq.push(p);G.mk.splice(i,1);nw('🔁 Kiralık: '+p.name+' ('+M$(c)+')');return'Kiralandı: '+p.name}
